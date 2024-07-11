@@ -1,9 +1,16 @@
 'use client'
 
+import headerNavLinks from '@/data/headerNavLinks'
 import { Dialog, Transition } from '@headlessui/react'
+import classNames from 'classnames'
+import { League_Spartan } from 'next/font/google'
 import { Fragment, useState } from 'react'
 import Link from './Link'
-import headerNavLinks from '@/data/headerNavLinks'
+
+const league_spartan = League_Spartan({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
@@ -36,6 +43,7 @@ const MobileNav = () => {
           />
         </svg>
       </button>
+
       <Transition appear show={navShow} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={onToggleNav}>
           <Transition.Child
@@ -67,7 +75,9 @@ const MobileNav = () => {
                       <div key={link.title} className="px-12 py-4">
                         <Link
                           href={link.href}
-                          className="text-2xl font-bold tracking-widest text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+                          className={classNames(
+                            'text-2xl font-bold tracking-widest text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400'
+                          )}
                           onClick={onToggleNav}
                         >
                           {link.title}

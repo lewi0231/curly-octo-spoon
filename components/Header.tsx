@@ -22,7 +22,7 @@ const Header = () => {
             {typeof siteMetadata.headerTitle === 'string' ? (
               <div
                 className={classNames(
-                  'hidden h-6 items-center text-xl font-medium sm:flex',
+                  ' h-6 items-center text-lg font-medium sm:flex sm:text-xl',
                   league_spartan.className
                 )}
               >

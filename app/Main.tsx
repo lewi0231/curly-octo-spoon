@@ -10,8 +10,8 @@ export default function Home({ posts }) {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="text-4xl font-medium leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-6  md:leading-8">
+        <div className="space-y-5 pb-8 pt-6">
+          <h1 className="text-4xl font-medium leading-6 tracking-tight text-gray-900 dark:text-gray-100">
             Latest Musings
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
@@ -25,16 +25,16 @@ export default function Home({ posts }) {
             return (
               <li key={slug} className="py-6">
                 <article>
-                  <div className="space-y-0 xl:grid xl:grid-cols-5 xl:items-baseline xl:space-y-0">
+                  <div className="space-y-0 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <dl>
                       <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time className="text-xs" dateTime={date}>
+                      <dd className="text-base font-medium leading-7 text-gray-500 dark:text-gray-400">
+                        <time className="text-xs font-normal " dateTime={date}>
                           {formatDate(date, siteMetadata.locale)}
                         </time>
                       </dd>
                     </dl>
-                    <div className="space-y-5 xl:col-span-4">
+                    <div className="space-y-5 xl:col-span-3">
                       <div className="space-y-2">
                         <div>
                           <h2 className="text-2xl font-medium leading-8 tracking-tight">
@@ -55,13 +55,14 @@ export default function Home({ posts }) {
                           {summary}
                         </div>
                       </div>
-                      <div className="text-base font-medium leading-3">
+                      <div className="text-base font-medium leading-3 ">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                          className="rounded-lg text-primary-400 hover:text-primary-600 dark:hover:text-primary-400"
                           aria-label={`Read more: "${title}"`}
                         >
-                          Read more &rarr;
+                          Read more
+                          <span className="font-bold"> &#x2197;</span>
                         </Link>
                       </div>
                     </div>
@@ -84,9 +85,9 @@ export default function Home({ posts }) {
         </div>
       )}
       {siteMetadata.newsletter?.provider && (
-        <div className=" grid grid-cols-5 items-center justify-start pt-4">
+        <div className=" grid grid-cols-4 items-center justify-start pt-4">
           <div></div>
-          <div className="col-span-4 w-2/3">
+          <div className="col-span-3 w-3/4">
             <NewsletterForm />
           </div>
         </div>

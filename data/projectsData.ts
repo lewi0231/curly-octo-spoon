@@ -21,8 +21,8 @@ const projectsData: Project[] = [
   {
     title: 'Recursive Trails: A thru-hiking / travel blog.',
     description: `A travel / thru-hiking blog`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    imgSrc: '/static/images/recursive-trails.jpeg',
+    href: '/blog/my-hiking-blog',
   },
 ]
 
